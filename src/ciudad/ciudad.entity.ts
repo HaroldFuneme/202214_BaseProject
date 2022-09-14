@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { SupermercadoEntity } from '../supermercado/supermercado.entity';
 
 @Entity()
 export class CiudadEntity {
@@ -13,4 +14,7 @@ export class CiudadEntity {
 
   @Column()
   numHabitantes: number;
+
+  @ManyToMany(() => SupermercadoEntity, (supermercado) => supermercado.ciudades)
+  supermercados: SupermercadoEntity[];
 }
