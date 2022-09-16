@@ -1,4 +1,10 @@
-import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { SupermercadoEntity } from '../supermercado/supermercado.entity';
 
 @Entity()
@@ -16,5 +22,16 @@ export class CiudadEntity {
   numHabitantes: number;
 
   @ManyToMany(() => SupermercadoEntity, (supermercado) => supermercado.ciudades)
+  @JoinTable({
+    name: 'supermercado_supermercado_ciudad_id',
+    joinColumn: {
+      name: 'supermercados',
+      referencedColumnName: 'id',
+    },
+    inverseJoinColumn: {
+      name: 'ciudades',
+      referencedColumnName: 'id',
+    },
+  })
   supermercados: SupermercadoEntity[];
 }
