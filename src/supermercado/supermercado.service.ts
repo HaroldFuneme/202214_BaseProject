@@ -17,14 +17,14 @@ export class SupermercadoService {
   ) {}
 
   async findAll(): Promise<SupermercadoEntity[]> {
-    return await this.supermercadoEntity.find({ relations: ['supermercado'] });
+    return await this.supermercadoEntity.find({ relations: ['ciudades'] });
   }
 
   async findOne(id: string): Promise<SupermercadoEntity> {
     const supermercado: SupermercadoEntity =
       await this.supermercadoEntity.findOne({
         where: { id },
-        relations: ['supermercado'],
+        relations: ['ciudades'],
       });
     if (!supermercado)
       throw new BusinessLogicException(
