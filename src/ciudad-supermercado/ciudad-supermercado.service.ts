@@ -173,6 +173,6 @@ export class CiudadSupermercadoService {
     ciudad.supermercados = ciudad.supermercados.filter(
       (e) => e.id !== supermercadoId,
     );
-    await this.ciudadRepository.delete(ciudad);
+    await this.ciudadRepository.save(ciudad);
   }
 }
