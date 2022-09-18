@@ -1,17 +1,17 @@
-import { IsNotEmpty, IsString } from 'class-validator';
-import { SupermercadoEntity } from 'src/supermercado/supermercado.entity';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { SupermercadoEntity } from '../supermercado/supermercado.entity';
 export class CiudadDto {
   @IsString()
   @IsNotEmpty()
-  readonly name: string;
+  readonly nombre: string;
 
   @IsString()
   @IsNotEmpty()
   readonly pais: string;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
-  readonly numeroHabitantes: string;
+  readonly numHabitantes: number;
 
   readonly supermercados: SupermercadoEntity[];
 }

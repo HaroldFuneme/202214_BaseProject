@@ -9,13 +9,13 @@ import {
   Put,
   UseInterceptors,
 } from '@nestjs/common';
-import { SupermercadoDto } from 'src/supermercado/supermercado.dto';
+import { SupermercadoDto } from '../supermercado/supermercado.dto';
 import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 import { CiudadSupermercadoService } from './ciudad-supermercado.service';
 import { SupermercadoEntity } from '../supermercado/supermercado.entity';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('/cities ')
+@Controller('cities')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class CiudadSupermercadoController {
   constructor(
@@ -65,15 +65,15 @@ export class CiudadSupermercadoController {
     );
   }
 
-  @Delete(':ciudadId/artworks/:supermercadoId')
+  @Delete(':ciudadId/supermercado/:supermercadoId')
   @HttpCode(204)
-  async deleteArtworkMuseum(
+  async deleteSupermarketFromCity(
     @Param('ciudadId') ciudadId: string,
     @Param('supermercadoId') supermercadoId: string,
   ) {
     return await this.ciudadSupermercadoService.deleteSupermarketFromCity(
-      ciudadId,
       supermercadoId,
+      ciudadId,
     );
   }
 }

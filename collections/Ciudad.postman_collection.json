@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "66615767-59c1-453a-aaed-572bfd5791fa",
+		"name": "Ciudad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15503762"
+	},
+	"item": [
+		{
+			"name": "Crear una ciudad válida.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tato\",\n    \"pais\": \"Argentina\",\n    \"numHabitantes\" : \"40\",\n    \"supermercados\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una ciudad inválida.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tato\",\n    \"pais\": \"Colombia\",\n    \"numHabitantes\" : \"20\",\n    \"supermercados\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las ciudades.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una ciudad por ID.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-0651013831ad",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-0651013831ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una ciudad por un ID que no existe.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-xxxxxxxxxxxx",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-xxxxxxxxxxxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar una ciudad.",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pepe_update_33\",\n    \"pais\": \"Ecuador\",\n    \"numHabitantes\": 3,\n    \"supermercados\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-0651013831ad",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-0651013831ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar una ciudad con un ID que no existe.",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Pepe_update_2\",\n    \"pais\": \"Ecuador\",\n    \"numHabitantes\": 3,\n    \"supermercados\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-0651013XXXX",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-0651013XXXX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar una ciudad por su ID.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-0651013831ad",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-0651013831ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/c31383ac-d881-4db8-b258-06510138XXXX",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"c31383ac-d881-4db8-b258-06510138XXXX"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

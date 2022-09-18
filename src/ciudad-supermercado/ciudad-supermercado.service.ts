@@ -142,6 +142,7 @@ export class CiudadSupermercadoService {
     const supermercado: SupermercadoEntity =
       await this.supermercadoRepository.findOne({
         where: { id: supermercadoId },
+        relations: ['ciudades'],
       });
     if (!supermercado)
       throw new BusinessLogicException(
@@ -172,6 +173,6 @@ export class CiudadSupermercadoService {
     ciudad.supermercados = ciudad.supermercados.filter(
       (e) => e.id !== supermercadoId,
     );
-    await this.ciudadRepository.save(ciudad);
+    await this.ciudadRepository.delete(ciudad);
   }
 }

@@ -15,7 +15,7 @@ import { CiudadEntity } from './ciudad.entity';
 import { CiudadDto } from './ciudad.dto';
 import { plainToInstance } from 'class-transformer';
 
-@Controller('/cities ')
+@Controller('cities')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class CiudadController {
   constructor(private readonly ciudadService: CiudadService) {}

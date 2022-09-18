@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "5ba34533-80cb-44b5-bac2-aebaeed0f7e5",
+		"name": "Asociacion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15503762"
+	},
+	"item": [
+		{
+			"name": "Asociar un nuevo supermercado a una ciudad.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercado/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercado",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un supermercado que no existe a una ciudad.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738XXXXX/supermercado/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738XXXXX",
+						"supermercado",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los supermercados que pertenecen a una ciudad.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercado",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un supermercado asociado a una ciudad.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercados/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercados",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un supermercado que no está asociado a una ciudad.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738FFFFFF/supermercados/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738FFFFFF",
+						"supermercados",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar los supermercados que están asociados a una ciudad.",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"Tato-Up\",\n        \"longitud\": 33,\n        \"latitud\": 22,\n        \"paginaWeb\": 22,\n        \"ciudades\": []\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercados/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercados",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar los supermercados asociados a una ciudad, con un supermercado inexistente.",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nombre\": \"Tato-Updat\",\n        \"longitud\": 33,\n        \"latitud\": 22,\n        \"paginaWeb\": 22,\n        \"ciudades\": []\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercados/ed2ea9fc-e12a-4979-97ce-8731ef1eFFFF",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercados",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1eFFFF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un supermercado asociado a una ciudad.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercado/ed2ea9fc-e12a-4979-97ce-8731ef1e0c01",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercado",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1e0c01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un supermercado que no estaba previamente asociado a una ciudad.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/cities/2a0e5d34-28ab-4b11-b76b-f4de738f01db/supermercado/ed2ea9fc-e12a-4979-97ce-8731ef1eFFFF",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"cities",
+						"2a0e5d34-28ab-4b11-b76b-f4de738f01db",
+						"supermercado",
+						"ed2ea9fc-e12a-4979-97ce-8731ef1eFFFF"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

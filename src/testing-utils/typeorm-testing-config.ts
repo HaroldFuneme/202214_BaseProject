@@ -7,9 +7,9 @@ export const TypeOrmTestingConfig = () => [
     type: 'sqlite',
     database: ':memory:',
     dropSchema: true,
-    entities: [CiudadEntity, SupermercadoEntity],
+    entities: [SupermercadoEntity, CiudadEntity],
     synchronize: true,
     keepConnectionAlive: true,
   }),
-  TypeOrmModule.forFeature([CiudadEntity, SupermercadoEntity]),
+  TypeOrmModule.forFeature([SupermercadoEntity, CiudadEntity]),
 ];

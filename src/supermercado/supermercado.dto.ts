@@ -4,13 +4,11 @@ import { CiudadEntity } from '../ciudad/ciudad.entity';
 export class SupermercadoDto {
   @IsString()
   @IsNotEmpty()
-  readonly name: string;
+  readonly nombre: string;
 
-  @IsNumber()
   @IsNotEmpty()
   readonly longitud: number;
 
-  @IsNumber()
   @IsNotEmpty()
   readonly latitud: number;
 

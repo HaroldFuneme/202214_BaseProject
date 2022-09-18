@@ -6,6 +6,8 @@ import { SupermercadoEntity } from '../supermercado/supermercado.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { TypeOrmTestingConfig } from '../testing-utils/typeorm-testing-config';
 import { faker } from '@faker-js/faker';
+import { CiudadService } from '../ciudad/ciudad.service';
+import { SupermercadoService } from '../supermercado/supermercado.service';
 
 describe('CiudadSupermercadoService', () => {
   let service: CiudadSupermercadoService;
@@ -16,7 +18,11 @@ describe('CiudadSupermercadoService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [CiudadSupermercadoService],
+      providers: [
+        CiudadSupermercadoService,
+        CiudadService,
+        SupermercadoService,
+      ],
       imports: [...TypeOrmTestingConfig()],
     }).compile();
 
@@ -155,8 +161,8 @@ describe('CiudadSupermercadoService', () => {
     });
 
     const resultSuper: CiudadEntity = await service.findSupermarketFromCity(
-      ciudad.id,
       supermercado.id,
+      ciudad.id,
     );
     expect(resultSuper.supermercados.length).toBe(1);
     expect(resultSuper.supermercados[0].id).toBe(supermercado.id);
