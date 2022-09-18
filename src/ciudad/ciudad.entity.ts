@@ -23,13 +23,13 @@ export class CiudadEntity {
 
   @ManyToMany(() => SupermercadoEntity, (supermercado) => supermercado.ciudades)
   @JoinTable({
-    name: 'supermercado_supermercado_ciudad_id',
+    name: 'supermercado_ciudad_id',
     joinColumn: {
-      name: 'supermercados',
+      name: 'supermercados_id',
       referencedColumnName: 'id',
     },
     inverseJoinColumn: {
-      name: 'ciudades',
+      name: 'ciudades_id',
       referencedColumnName: 'id',
     },
   })

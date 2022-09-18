@@ -73,7 +73,7 @@ describe('SupermercadoService', () => {
     );
   });
 
-  it('create should return a new supermercado with pais permitted', async () => {
+  it('create should return a new supermercado with nombre permitted', async () => {
     const supermercado: SupermercadoEntity = {
       id: '',
       nombre: 'name',
@@ -98,10 +98,10 @@ describe('SupermercadoService', () => {
     expect(supermercado.paginaWeb).toEqual(storedsupermercado.paginaWeb);
   });
 
-  it('create should throw an exception for an invalid pais -> pais NOT permitted', async () => {
+  it('create should throw an exception for an invalid nombre -> nombre NOT permitted', async () => {
     const supermercado: SupermercadoEntity = {
       id: '',
-      nombre: faker.lorem.words(),
+      nombre: 'name not permitted',
       longitud: faker.datatype.number(),
       latitud: faker.datatype.number(),
       paginaWeb: faker.datatype.number(),

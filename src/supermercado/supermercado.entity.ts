@@ -25,16 +25,5 @@ export class SupermercadoEntity {
   paginaWeb: number;
 
   @ManyToMany(() => CiudadEntity, (ciudad) => ciudad.supermercados)
-  @JoinTable({
-    name: 'ciudad_ciudad_supermercado_id',
-    joinColumn: {
-      name: 'ciudades',
-      referencedColumnName: 'id',
-    },
-    inverseJoinColumn: {
-      name: 'supermercados',
-      referencedColumnName: 'id',
-    },
-  })
   ciudades: CiudadEntity[];
 }
